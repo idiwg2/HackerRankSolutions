@@ -1,0 +1,43 @@
+/*
+  Print elements of a linked list in reverse order 
+  head pointer input could be NULL as well for empty list
+  Node is defined as 
+  class Node {
+     int data;
+     Node next;
+  }
+*/
+    // This is a "method-only" submission. 
+    // You only need to complete this method. 
+
+void ReversePrint(Node head) {
+  // This is a "method-only" submission. 
+  // You only need to complete this method.
+    
+    
+    if(head== null || head.next == null)
+        ;
+    
+   
+        Node current = head;
+        Node previous = null;
+        Node temp =null;
+        while(current!=null)
+        {
+            temp = current.next;
+            current.next = previous;
+            previous = current;
+            current = temp;
+           
+            
+        }
+       
+        current = previous;
+    
+    while(current!=null)
+    {
+        System.out.println(current.data);
+        current = current.next;
+    }
+
+}

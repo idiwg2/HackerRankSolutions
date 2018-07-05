@@ -1,0 +1,44 @@
+/*
+  Get Nth element from the end in a linked list of integers
+  Number of elements in the list will always be greater than N.
+  Node is defined as 
+  class Node {
+     int data;
+     Node next;
+  }
+*/
+    
+int GetNode(Node head,int n) {
+     // This is a "method-only" submission. 
+     // You only need to complete this method. 
+     int i=0;
+     if(head == null)
+        return 0;
+    if(head.next == null)
+        return head.data;
+   
+        Node current = head;
+        Node previous = null;
+        Node temp =null;
+        while(current!=null)
+        {
+            temp = current.next;
+            current.next = previous;
+            previous = current;
+            current = temp;
+           
+            
+        }
+       
+        current = previous;
+    
+   
+    
+    while(current.next!=null && i < n)
+    {
+       current = current.next;
+        i++;
+    }
+       return current.data;
+
+}

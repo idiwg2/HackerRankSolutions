@@ -1,0 +1,61 @@
+/* Hidden stub code will pass a root argument to the function below. Complete the function to solve the challenge. Hint: you may want to write one or more helper functions.  
+
+The Node class is defined as follows:
+    class Node {
+    int data;
+    Node left;
+    Node right;
+     }
+*/
+
+   boolean checkBST(Node root,int min , int max){
+       if(root == null) return true;
+       
+       if(root.data<=min || root.data > max)
+           return false;
+       
+       if (!checkBST(root.left, min, root.data) ||
+         !checkBST(root.right, root.data, max)) {
+              return false;
+       }
+       return true;
+   }
+
+    boolean checkBST(Node root) {
+        
+        
+       Stack<Node> stack = new Stack<Node>();
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        if(root == null)
+         return true;
+         
+        Node node = root;
+        while(node!=null){
+            stack.push(node);
+            node=node.left;
+        }
+        
+        while(stack.size()>0){
+            node = stack.pop();
+            list.add(node.data);
+            
+            if(node.right!=null){
+                
+                node=node.right;
+                
+                while(node!=null){
+                    stack.push(node);
+                    node=node.left;
+                }
+            }
+            
+        }
+            int [] arr = list.stream().mapToInt(Integer::intValue).toArray();
+           for(int i = 1 ; i < arr.length; i++) {
+              if(arr[i-1]>=arr[i])
+            return false;
+    }
+            return true;
+         
+        
+}
