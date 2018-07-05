@@ -1,0 +1,53 @@
+   // Write your code here
+
+public PerformOperation isOdd()
+{
+   return  (int x) -> {
+                      if(x%2 == 1) return true;
+                      else return false;
+                      };
+    
+}
+
+public PerformOperation isPrime()
+{
+    return (int x) ->   
+                       {
+                        if(x==2) return true;
+                        else if(x<2)return false;
+                        boolean flag =true;
+                        
+                            
+                           for(int i = 2 ; i*i <= x ; i++)
+                           {
+                             if(x%i == 0)
+                             {
+                               flag = false;
+                               return flag;
+                             }
+                                
+                            } 
+                            return flag;
+                        
+    
+                       };    
+                        
+}
+
+
+public PerformOperation isPalindrome()
+{
+    return (int x) -> {
+                      String s = Integer.toString(x);
+                      StringBuffer sb = new StringBuffer(s).reverse();
+                      String s1 = new String(sb);
+                      if(s.equals(s1))
+                          return true;
+                      else 
+                           return false;
+                      
+                      };
+    
+}
+
+}

@@ -1,0 +1,18 @@
+
+
+           if(order.equals("cake"))
+           {
+               
+              
+               new Cake().getType();
+               return new Cake();
+           }
+           
+           else if( order.equals("pizza"))
+           {
+            
+               new Pizza().getType();
+              
+           }
+   
+        return new Pizza();
